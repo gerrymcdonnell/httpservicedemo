@@ -1,9 +1,41 @@
-<div *ngFor="let user of users">
-  <div class="well">
-      <ul class="list-group">                
-          <li class="list-group-item">id: {{ user.id }}</li>
-          <li class="list-group-item">name: {{ user.name }}</li>
-      </ul>
-      <br>
+<div class="container">
+
+
+  <h2>POST Example</h2>
+  <form (submit)="onSubmit(isEdit)">
+      
+    <div class="form-group">
+          <label>Name</label>
+          <input type="text" class="form-control" [(ngModel)]="user.name" name="name">
+      </div>
+
+      <div class="form-group">
+          <label>Email</label>
+          <input type="text" class="form-control" [(ngModel)]="user.email" name="email">
+      </div>
+
+      <div class="form-group">
+          <label>Phone</label>
+          <input type="text" class="form-control" [(ngModel)]="user.phone" name="phone">
+      </div>
+
+      <input type="submit" class="btn btn-success" value="Submit">
+  </form>
+
+  <hr>
+
+  <div *ngFor="let user of users">
+    <div class="well">
+        <ul class="list-group">                
+            <li class="list-group-item">id: {{ user.id }}</li>
+            <li class="list-group-item">name: {{ user.name }}</li>
+
+            <li class="list-group-item">email: {{ user.email }}</li>
+
+            <li class="list-group-item">phone: {{ user.phone }}</li>
+        </ul>
+        <br>
+    </div>
   </div>
+
 </div>
