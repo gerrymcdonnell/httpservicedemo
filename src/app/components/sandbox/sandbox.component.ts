@@ -37,7 +37,7 @@ export class SandboxComponent implements OnInit {
 
   onSubmit(isEdit){
         
-    if(isEdit){
+    if(isEdit==true){
         //edit user
         this.dataService.updateUser(this.user).subscribe(user=>{
             
@@ -51,6 +51,7 @@ export class SandboxComponent implements OnInit {
                     console.log("doing splice");
                 }
             }
+            //add it back to the top
             this.users.unshift(this.user);
         })
     }
