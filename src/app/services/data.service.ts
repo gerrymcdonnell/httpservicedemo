@@ -22,18 +22,17 @@ export class DataService {
       return this.http.post('http://jsonplaceholder.typicode.com/users',user).map(res=>res.json());
   }
 
-  /*deleteUser(id){
+  deleteUser(id){
       return this.http.delete('http://jsonplaceholder.typicode.com/users/'+id).map(res=>res.json());
   }
 
-  //broke
-  //added sJSON.stringify didnt seem to help
+
   updateUser(user){
       console.log("doing update via PUT request");
       console.log(user);
       return this.http.put('http://jsonplaceholder.typicode.com/users/'+user.id, user)
           .map(res => console.log(res.json()));
-  }*/
+  }
 
    
 

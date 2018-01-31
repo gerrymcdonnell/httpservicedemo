@@ -2,7 +2,7 @@
 
 
   <h2>POST Example</h2>
-  <form (submit)="onSubmit()">
+  <form (submit)="onSubmit(isEdit)">
       
     <div class="form-group">
           <label>Name</label>
@@ -19,7 +19,7 @@
           <input type="text" class="form-control" [(ngModel)]="user.phone" name="phone">
       </div>
 
-      <input type="submit" class="btn btn-success" value="Submit">
+      <input type="submit" class="btn btn-success" value="Add User">
   </form>
 
   <hr>
@@ -34,7 +34,12 @@
 
             <li class="list-group-item">phone: {{ user.phone }}</li>
         </ul>
-        <br>
+
+        <button class="btn btn-primary btn-sm" (click)="onEditClick(user)">edit</button>
+        <button class="btn btn-danger btn-sm" (click)="onDeleteClick(user.id)">delete</button>
+
+        <p>
+
     </div>
   </div>
 

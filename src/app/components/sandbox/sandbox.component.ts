@@ -14,10 +14,13 @@ export class SandboxComponent implements OnInit {
 
   //single user to be added to form
   user={
+    id:'',
     name:'',
     email:'',
     phone:''
   }
+
+  isEdit:boolean=false;
 
   constructor(public dataService:DataService) {
 
@@ -32,17 +35,60 @@ export class SandboxComponent implements OnInit {
   }
 
 
-  onSubmit(){     
+  onSubmit(isEdit){
+        
+    if(isEdit){
+        //edit user
+        this.dataService.updateUser(this.user).subscribe(user=>{
+            
+            console.log("calling updateUser()");
 
-    //its an add user
-    this.dataService.addUser(this.user).subscribe(user=>{
-      
-      console.log("logging response "+user);
-      
-      //add to start of array so we can at top of page          
-      this.users.unshift(user);            
+            //look for the one we edited and add new one back
+            for(let i=0;i<this.users.length;i++){
+                if(this.users[i].id==this.user.id){
+                    //splice removes elements from an array
+                    this.users.splice(i,1);
+                    console.log("doing splice");
+                }
+            }
+            this.users.unshift(this.user);
+        })
+    }
+    else{
+        //its an add user
+        console.log("adding user...");
+        this.dataService.addUser(this.user).subscribe(user=>{
+            this.users.unshift(user);
+            console.log(user);
+        })
+    }  
+  }
+
+
+
+  onDeleteClick(id){
+    this.dataService.deleteUser(id).subscribe(res=>{
+        console.log(res);
+        
+        //loop all users and find the one we just deleted
+        for(let i=0;i<this.users.length;i++){
+            if(this.users[i].id==id){
+                //splice removes elements from an array
+                this.users.splice(i,1);
+            }
+        }
+
     })
+  }// end delete
 
-  }//end submit
+
+onEditClick(user){
+    this.isEdit=true;
+    this.user=user;
+    console.log("edit button clicked - onEditClick()");
+}
+
+
+
 
 }
