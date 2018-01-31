@@ -9,6 +9,7 @@ import { DataService } from '../../services/data.service';
 })
 export class SandboxComponent implements OnInit {
 
+  //array of users
   users:any[];
 
   //single user to be added to form
@@ -39,7 +40,7 @@ export class SandboxComponent implements OnInit {
       console.log("logging response "+user);
       
       //add to start of array so we can at top of page          
-      this.users.unshift();            
+      this.users.unshift(user);            
     })
 
   }//end submit
