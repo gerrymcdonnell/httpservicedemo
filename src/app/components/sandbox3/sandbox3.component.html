@@ -1,0 +1,52 @@
+Test sandbox 3 - cakephp 3.5.11
+
+using CRUD
+
+<div class="container">
+
+
+  <h2>POST Example http://localhost/cake3restapi3/words.json</h2>
+  <form (submit)="onSubmit(isEdit)">
+      
+    <div class="form-group">
+          <label>Word</label>
+          <input type="text" class="form-control" [(ngModel)]="word.wordtitle" name="wordtitle">
+      </div>
+
+      <div class="form-group">
+          <label>Syllablles</label>
+          <input type="text" class="form-control" [(ngModel)]="word.word_syllables" name="word_syllables">
+      </div>      
+
+      <input type="submit" class="btn btn-success" value="Add">
+
+  </form>
+
+  <hr>
+
+  <div *ngFor="let word of words">
+    <div class="well">
+        <ul class="list-group">                
+            <li class="list-group-item">id: {{ word.id }}</li>
+
+            <li class="list-group-item">Word: {{ word.wordtitle }}</li>
+
+            <li class="list-group-item">Syllables: {{ word.word_syllables }}</li>
+
+
+            <li class="list-group-item">created: {{ word.created }}</li>
+
+
+            <li class="list-group-item">modified: {{ word.modified }}</li>
+
+        </ul>
+
+        <button id="editButton" class="btn btn-primary btn-sm" (click)="onEditClick($event,word)">edit</button>
+        <button class="btn btn-danger btn-sm" (click)="onDeleteClick(word.id)">delete</button>
+
+        <p>
+
+    </div>
+  </div>
+
+</div>
