@@ -20,6 +20,7 @@ export class SandboxComponent3 implements OnInit {
   }
 
   isEdit:boolean=false;
+  saveStatus:string="Add Word";
 
   constructor(public dataService3:DataService3) {
 
@@ -90,7 +91,7 @@ onEditClick($e,word){
     console.log("edit button clicked - onEditClick()");
 
     //change text of save/add button to edit
-    
+    this.saveStatus="Save Edit";
 
     console.log($e);
 }
