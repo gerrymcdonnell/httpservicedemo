@@ -32,17 +32,17 @@ Test sandbox 4 - cakephp 3.5.11 RSS test
         <ul class="list-group">                
             <li class="list-group-item">id: {{ user.id }}</li>
 
-            <li class="list-group-item">Word: {{ user.name }}</li>
+            <li class="list-group-item">name: {{ user.name }}</li>
 
-            <li class="list-group-item">Syllables: {{ user.username }}</li>
+            <li class="list-group-item">username: {{ user.username }}</li>
 
-            <li class="list-group-item">Syllables: {{ user.email }}</li>
-
-
-            <li class="list-group-item">created: {{ user.created | date:"MM-dd-yyyy hh:mm" }}</li>
+            <li class="list-group-item">email: {{ user.email }}</li>
 
 
-            <li class="list-group-item">modified: {{ user.modified | date:"MM-dd-yyyy hh:mm" }}</li>
+            <li class="list-group-item">created: {{ user.created | date:"dd-MM-yyyy hh:mm:ss" }}</li>
+
+
+            <li class="list-group-item">modified: {{ user.modified | date:"dd-mm-yyyy hh:mm:ss" }}</li>
 
         </ul>
 
