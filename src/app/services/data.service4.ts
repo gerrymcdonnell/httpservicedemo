@@ -36,6 +36,11 @@ export class DataService4 {
     return this.http.get(this.RESTUrl).map(res=>res.json());    
   }
 
+  getUser(id){
+    return this.http.get('http://localhost/cake3restapi3/users/'+id+'.json')
+    .map(res=>res.json()); 
+  }
+
   
   //POST	/recipes.format	RecipesController::add()
   addUser(user){

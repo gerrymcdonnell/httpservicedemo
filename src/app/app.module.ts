@@ -46,6 +46,7 @@ const appRoutes:Routes=[
   {path:'sandbox2',component:SandboxComponent2},
   {path:'sandbox3',component:SandboxComponent3},
   {path:'sandbox4',component:SandboxComponent4},
+  {path:'user/:id',component:UserDetailComponent},
 ]
 
 

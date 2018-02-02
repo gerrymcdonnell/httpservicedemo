@@ -1,3 +1,28 @@
-<p>
-  user-detail works!
-</p>
+<div class="well">
+    <ul class="list-group">                
+        <li class="list-group-item">id: {{ user.id }}</li>
+
+        <li class="list-group-item">name: {{ user.name }}</li>
+
+        <li class="list-group-item">username: {{ user.username }}</li>
+
+        <li class="list-group-item">email: {{ user.email }}</li>
+
+        <li class="list-group-item">created: {{ user.created | date:"dd-MM-yyyy hh:mm:ss" }}</li>
+
+        <li class="list-group-item">modified: {{ user.modified | date:"dd-mm-yyyy hh:mm:ss" }}</li>
+
+        <li class="list-group-item">
+            <a [routerLink]="['/user/'+user.id]" href="" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-o-right"></i> Details</a>
+        </li>
+
+        
+
+    </ul>
+
+    <button id="editButton" class="btn btn-primary btn-sm" (click)="onEditClick($event,user)">edit</button>
+    <button class="btn btn-danger btn-sm" (click)="onDeleteClick(user.id)">delete</button>
+
+    <p>
+
+</div>
