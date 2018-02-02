@@ -43,7 +43,7 @@ export class SandboxComponent3 implements OnInit {
    
   ngOnInit() {
     //flash message doenst work
-    this.fMS.show('FMS: Please fill in all fields', {cssClass:'alert-danger', timeout: 4000});
+    this.fMS.show('Sandbox', {cssClass:'alert-danger', timeout: 4000});
   }
 
 
@@ -71,15 +71,17 @@ export class SandboxComponent3 implements OnInit {
             //clear text boxes
 
             //donest work
-            //this.flashMessagesService.show('FMS: Please fill in all fields', {cssClass:'alert-danger', timeout: 1000});
+            this.fMS.show('Updated Word', {cssClass:'alert-danger', timeout: 4000});
         })
     }
     else{
-        //its an add user
+        //its an add
         console.log("adding word...");
         this.dataService3.addWord(this.word).subscribe(word=>{
             this.words.unshift(word);
             console.log(word);
+
+            this.fMS.show('Added Word', {cssClass:'alert-danger', timeout: 4000});
         })
     }  
   }

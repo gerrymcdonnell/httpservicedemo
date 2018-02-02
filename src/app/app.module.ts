@@ -30,7 +30,7 @@ import{NavbarComponent} from './components/navbar/navbar.component';
 import {RouterModule,Routes} from '@angular/router';
 
 //flsh messages module
-import { FlashMessagesModule } from 'angular2-flash-messages';
+import {FlashMessagesModule } from 'angular2-flash-messages';
 
 
 //create routes for app
@@ -55,7 +55,7 @@ const appRoutes:Routes=[
     HttpModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
-    FlashMessagesModule 
+    FlashMessagesModule.forRoot()
   ],
   providers: [
     DataService,
