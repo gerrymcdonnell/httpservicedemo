@@ -35,6 +35,8 @@ import {RouterModule,Routes} from '@angular/router';
 
 //flsh messages module
 import {FlashMessagesModule } from 'angular2-flash-messages';
+import { UserMasterComponent } from './components/user-master/user-master.component';
+import { UserDetailComponent } from './components/user-detail/user-detail.component';
 
 
 //create routes for app
@@ -54,7 +56,9 @@ const appRoutes:Routes=[
     SandboxComponent,
     SandboxComponent2,
     SandboxComponent3,
-    SandboxComponent4
+    SandboxComponent4,
+    UserMasterComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,
