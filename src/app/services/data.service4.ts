@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 import {Http} from '@angular/http';
 
 @Injectable()
-export class DataService3 {
+export class DataService4 {
 
     /**
      * similar to dataservice this will connect to a local/remote REST service we made
@@ -23,7 +23,7 @@ export class DataService3 {
   }
     
   //build header object
-  buildBasicAuthHeader(){
+  buildAuthHeader(){
       var headers;        
       var auth = this.buildHttpBasicAuthString("gerry","ted");
       headers = {"Authorization": "Basic " + auth};
@@ -33,7 +33,7 @@ export class DataService3 {
 
 
   getWords(){
-    return this.http.get(this.RESTUrl).map(res=>res.json());    
+    return this.http.get('http://localhost/cakenewsapp6/feeds/index.json').map(res=>res.json());    
   }
 
   

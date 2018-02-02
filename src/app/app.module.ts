@@ -23,6 +23,10 @@ import { DataService2 } from './services/data.service2';
 import { DataService3 } from './services/data.service3';
 import { SandboxComponent3 } from './components/sandbox3/sandbox3.component';
 
+//RSS test
+import { DataService4 } from './services/data.service4';
+import { SandboxComponent4 } from './components/sandbox4/sandbox4.component';
+
 //navbar
 import{NavbarComponent} from './components/navbar/navbar.component';
 
@@ -35,10 +39,11 @@ import {FlashMessagesModule } from 'angular2-flash-messages';
 
 //create routes for app
 const appRoutes:Routes=[
-  {path:'',component:SandboxComponent3},
+  {path:'',component:SandboxComponent4},
   {path:'sandbox',component:SandboxComponent},
   {path:'sandbox2',component:SandboxComponent2},
   {path:'sandbox3',component:SandboxComponent3},
+  {path:'sandbox4',component:SandboxComponent4},
 ]
 
 
@@ -48,7 +53,8 @@ const appRoutes:Routes=[
     NavbarComponent,
     SandboxComponent,
     SandboxComponent2,
-    SandboxComponent3
+    SandboxComponent3,
+    SandboxComponent4
   ],
   imports: [
     BrowserModule,
@@ -60,7 +66,8 @@ const appRoutes:Routes=[
   providers: [
     DataService,
     DataService2,
-    DataService3
+    DataService3,
+    DataService4
   ],
   bootstrap: [AppComponent]
 })

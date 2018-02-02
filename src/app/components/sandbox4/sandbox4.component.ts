@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
 //import Dataservice
-import { DataService3 } from '../../services/data.service3';
+import { DataService4 } from '../../services/data.service4';
 
 //included with flash mesages component
 import { FlashMessagesService } from 'angular2-flash-messages';
 
 @Component({
-  selector: 'app-sandbox3',
-  templateUrl: './sandbox3.component.html'
+  selector: 'app-sandbox4',
+  templateUrl: './sandbox4.component.html'
 })
-export class SandboxComponent3 implements OnInit {
+export class SandboxComponent4 implements OnInit {
 
   //array of users
   words:any[];
@@ -26,12 +26,12 @@ export class SandboxComponent3 implements OnInit {
   saveStatus:string="Add Word";
 
   constructor(
-      public dataService3:DataService3,      
+      public dataService4:DataService4,      
         public fMS:FlashMessagesService
     ) {
 
     //use data service its a n obseravble so we must subscribe to it
-    this.dataService3.getWords().subscribe(words=>{
+    this.dataService4.getWords().subscribe(words=>{
         //NOTE: this may cuases problem check cakephp output
         this.words=words;
     })  
@@ -52,7 +52,7 @@ export class SandboxComponent3 implements OnInit {
         
     if(isEdit==true){
         //edit user
-        this.dataService3.updateWord(this.word).subscribe(word=>{
+        this.dataService4.updateWord(this.word).subscribe(word=>{
             
             console.log("calling updateUser()");
 
@@ -78,7 +78,7 @@ export class SandboxComponent3 implements OnInit {
     else{
         //its an add
         console.log("adding word...");
-        this.dataService3.addWord(this.word).subscribe(word=>{
+        this.dataService4.addWord(this.word).subscribe(word=>{
             this.words.unshift(word);
             console.log(word);
 
@@ -90,7 +90,7 @@ export class SandboxComponent3 implements OnInit {
 
 
   onDeleteClick(id){
-    this.dataService3.deleteWord(id).subscribe(res=>{
+    this.dataService4.deleteWord(id).subscribe(res=>{
         console.log(res);
         
         //loop all users and find the one we just deleted
