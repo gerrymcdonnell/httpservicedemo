@@ -9,7 +9,7 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 //router
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-//import { Client } from '../../models/Client';
+import { User } from '../../models/User';
 
 @Component({
   selector: 'app-user-detail',
@@ -18,14 +18,15 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 export class UserDetailComponent implements OnInit {
 
   id:string;
+  user:User={};
 
   //user obj
-  user={
+  /*user={
     id:'',
     name:'',
     username:'',
     email:''
-  }
+  }*/
 
 
   constructor(
