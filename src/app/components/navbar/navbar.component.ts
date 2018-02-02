@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FlashMessagesService } from 'angular2-flash-messages';
+//import { FlashMessagesService } from 'angular2-flash-messages';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html'  
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(public flashMessagesService: FlashMessagesService) {  
+  constructor(/*public flashMessagesService: FlashMessagesService*/) {  
 
   
   }

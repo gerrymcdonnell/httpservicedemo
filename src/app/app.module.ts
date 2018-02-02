@@ -55,7 +55,7 @@ const appRoutes:Routes=[
     HttpModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
-    FlashMessagesModule.forRoot()
+    FlashMessagesModule 
   ],
   providers: [
     DataService,

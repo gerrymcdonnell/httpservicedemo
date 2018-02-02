@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 //import Dataservice
 import { DataService3 } from '../../services/data.service3';
 
+//included with flash mesages component
+import { FlashMessagesService } from 'angular2-flash-messages';
+
 @Component({
   selector: 'app-sandbox3',
   templateUrl: './sandbox3.component.html'
@@ -22,17 +25,25 @@ export class SandboxComponent3 implements OnInit {
   isEdit:boolean=false;
   saveStatus:string="Add Word";
 
-  constructor(public dataService3:DataService3) {
+  constructor(
+      public dataService3:DataService3,      
+        public fMS:FlashMessagesService
+    ) {
 
     //use data service its a n obseravble so we must subscribe to it
     this.dataService3.getWords().subscribe(words=>{
         //NOTE: this may cuases problem check cakephp output
         this.words=words;
-    })       
+    })  
+    
+    
 
    }
 
+   
   ngOnInit() {
+    //flash message doenst work
+    this.fMS.show('FMS: Please fill in all fields', {cssClass:'alert-danger', timeout: 4000});
   }
 
 
@@ -54,6 +65,13 @@ export class SandboxComponent3 implements OnInit {
             }
             //add it back to the top
             this.words.unshift(this.word);
+            
+            //change text of save/add button to edit
+            this.saveStatus="Add Word";
+            //clear text boxes
+
+            //donest work
+            //this.flashMessagesService.show('FMS: Please fill in all fields', {cssClass:'alert-danger', timeout: 1000});
         })
     }
     else{
