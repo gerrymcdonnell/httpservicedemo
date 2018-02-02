@@ -12,18 +12,8 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 })
 export class SandboxComponent4 implements OnInit {
 
-  //array of users
-  //words:any[];
-
   //users array
   users:any[];
-
-  //single user to be added to form
-  /*word={
-    id:'',
-    wordtitle:'',
-    word_syllables:''
-  }*/
 
   //user obj
   user={

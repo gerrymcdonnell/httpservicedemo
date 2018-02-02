@@ -1,3 +1,52 @@
-<p>
-  user-master works!
-</p>
+Test sandbox 4 - cakephp 3.5.11 RSS test
+
+
+
+<div class="container">
+
+
+  <h2>Example http://localhost/cakenewsapp6/feeds/index.json</h2>
+  <form (submit)="onSubmit(isEdit)">      
+    <div class="form-group">
+          <label>name</label>
+          <input type="text" class="form-control" [(ngModel)]="user.name" name="name">
+      </div>
+
+      <div class="form-group">
+          <label>Username</label>
+          <input type="text" class="form-control" [(ngModel)]="user.username" name="username">
+      </div>  
+            
+      <div class="form-group">
+        <label>email</label>
+        <input type="text" class="form-control" [(ngModel)]="user.email" name="email">
+    </div>  
+
+      <input id="saveButton"type="submit" class="btn btn-success" value={{saveStatus}}>
+  </form> 
+
+  <hr>
+
+  <div *ngFor="let user of users">
+    <div class="well">
+        <ul class="list-group">                
+            <li class="list-group-item">id: {{ user.id }}</li>
+
+            <li class="list-group-item">name: {{ user.name }}</li>
+
+
+            <li class="list-group-item">
+                <a [routerLink]="['/user/'+user.id]" href="" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-o-right"></i> Details</a>
+            </li>           
+
+        </ul>
+
+        <button id="editButton" class="btn btn-primary btn-sm" (click)="onEditClick($event,user)">edit</button>
+        <button class="btn btn-danger btn-sm" (click)="onDeleteClick(user.id)">delete</button>
+
+        <p>
+
+    </div>
+  </div>
+
+</div>
