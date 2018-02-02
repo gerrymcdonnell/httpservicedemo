@@ -33,7 +33,7 @@ export class DataService3 {
 
 
   getWords(){
-    return this.http.get(this.RESTUrl).map(res=>console.log(res.json()));
+    return this.http.get(this.RESTUrl).map(res=>res.json());
   }
 
   

@@ -21,11 +21,12 @@ export class SandboxComponent3 implements OnInit {
 
   isEdit:boolean=false;
 
-  constructor(public dataService2:DataService3) {
+  constructor(public dataService3:DataService3) {
 
     //use data service its a n obseravble so we must subscribe to it
-    this.dataService2.getWords().subscribe(words=>{
-      this.words=words;
+    this.dataService3.getWords().subscribe(words=>{
+        //NOTE: this may cuases problem check cakephp output
+        this.words=words;
     })       
 
    }
@@ -38,7 +39,7 @@ export class SandboxComponent3 implements OnInit {
         
     if(isEdit==true){
         //edit user
-        this.dataService2.updateWord(this.word).subscribe(word=>{
+        this.dataService3.updateWord(this.word).subscribe(word=>{
             
             console.log("calling updateUser()");
 
@@ -57,7 +58,7 @@ export class SandboxComponent3 implements OnInit {
     else{
         //its an add user
         console.log("adding word...");
-        this.dataService2.addWord(this.word).subscribe(word=>{
+        this.dataService3.addWord(this.word).subscribe(word=>{
             this.words.unshift(word);
             console.log(word);
         })
@@ -67,7 +68,7 @@ export class SandboxComponent3 implements OnInit {
 
 
   onDeleteClick(id){
-    this.dataService2.deleteWord(id).subscribe(res=>{
+    this.dataService3.deleteWord(id).subscribe(res=>{
         console.log(res);
         
         //loop all users and find the one we just deleted
@@ -88,7 +89,8 @@ onEditClick($e,word){
     this.word=word;
     console.log("edit button clicked - onEditClick()");
 
-    //change text of button to edit
+    //change text of save/add button to edit
+    
 
     console.log($e);
 }

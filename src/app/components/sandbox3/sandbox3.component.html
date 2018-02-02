@@ -18,7 +18,7 @@ using CRUD
           <input type="text" class="form-control" [(ngModel)]="word.word_syllables" name="word_syllables">
       </div>      
 
-      <input type="submit" class="btn btn-success" value="Add">
+      <input id="saveButton"type="submit" class="btn btn-success" value="Add">
 
   </form>
 
@@ -34,10 +34,10 @@ using CRUD
             <li class="list-group-item">Syllables: {{ word.word_syllables }}</li>
 
 
-            <li class="list-group-item">created: {{ word.created }}</li>
+            <li class="list-group-item">created: {{ word.created | date:"MM-dd-yyyy hh:mm" }}</li>
 
 
-            <li class="list-group-item">modified: {{ word.modified }}</li>
+            <li class="list-group-item">modified: {{ word.modified | date:"MM-dd-yyyy hh:mm" }}</li>
 
         </ul>
 
