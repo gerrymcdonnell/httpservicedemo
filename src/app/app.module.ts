@@ -40,6 +40,7 @@ import {FlashMessagesModule } from 'angular2-flash-messages';
 import{UserDataService} from './services/user/user.data.service'
 import { UserMasterComponent } from './components/user-master/user-master.component';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
+import { UserListComponent } from './components/user-list/user-list.component';
 
 
 //create routes for app
@@ -52,6 +53,7 @@ const appRoutes:Routes=[
 
   {path:'users',component:UserMasterComponent},
   {path:'user/:id',component:UserDetailComponent},
+  {path:'userlist',component:UserListComponent},
 ]
 
 
@@ -64,7 +66,8 @@ const appRoutes:Routes=[
     SandboxComponent3,
     SandboxComponent4,
     UserMasterComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,

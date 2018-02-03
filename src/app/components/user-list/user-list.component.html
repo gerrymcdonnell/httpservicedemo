@@ -1,0 +1,20 @@
+<div *ngFor="let user of users">
+    <div class="well">
+        <ul class="list-group">   
+
+            <li class="list-group-item">id: {{ user.id }}</li>
+            <li class="list-group-item">name: {{ user.name }}</li>
+
+            <li class="list-group-item">
+                <a [routerLink]="['/user/'+user.id]" href="" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-o-right"></i> Details</a>
+            </li>           
+
+        </ul>
+
+        <button id="editButton" class="btn btn-primary btn-sm" (click)="onEditClick($event,user)">edit</button>
+        <button class="btn btn-danger btn-sm" (click)="onDeleteClick(user.id)">delete</button>
+
+        <p>
+    </div>
+</div>
+
