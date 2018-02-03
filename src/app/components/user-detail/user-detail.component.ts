@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-//import Dataservice
-import { DataService4 } from '../../services/data.service4';
+//import UserDataservice
+import { UserDataService} from '../../services/user/user.data.service';
 
 //included with flash mesages component
 import { FlashMessagesService } from 'angular2-flash-messages';
@@ -30,7 +30,7 @@ export class UserDetailComponent implements OnInit {
 
 
   constructor(
-    public userService:DataService4,
+    public userService:UserDataService,
     public router:Router,
     public route:ActivatedRoute,
     public flashMessagesService:FlashMessagesService

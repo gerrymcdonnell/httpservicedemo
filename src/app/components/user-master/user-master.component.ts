@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 //import Dataservice
-import { DataService4 } from '../../services/data.service4';
+import { UserDataService } from '../../services/user/user.data.service';
 
 //included with flash mesages component
 import { FlashMessagesService } from 'angular2-flash-messages';
@@ -28,7 +28,7 @@ export class UserMasterComponent implements OnInit {
   saveStatus:string="Add User";
 
   constructor(
-      public dataService4:DataService4,      
+      public dataService4:UserDataService,      
         public fMS:FlashMessagesService
     ) {
 

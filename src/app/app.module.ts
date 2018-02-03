@@ -35,6 +35,9 @@ import {RouterModule,Routes} from '@angular/router';
 
 //flsh messages module
 import {FlashMessagesModule } from 'angular2-flash-messages';
+
+//user detail and master
+import{UserDataService} from './services/user/user.data.service'
 import { UserMasterComponent } from './components/user-master/user-master.component';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
 
@@ -48,7 +51,6 @@ const appRoutes:Routes=[
   {path:'sandbox4',component:SandboxComponent4},
 
   {path:'users',component:UserMasterComponent},
-
   {path:'user/:id',component:UserDetailComponent},
 ]
 
@@ -75,7 +77,8 @@ const appRoutes:Routes=[
     DataService,
     DataService2,
     DataService3,
-    DataService4
+    DataService4,
+    UserDataService
   ],
   bootstrap: [AppComponent]
 })
